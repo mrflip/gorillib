@@ -47,7 +47,7 @@ module Gorillib
         @type             = Gorillib::Factory.factory_for(type, type_opts)
         default_visibilities = visibilities
         @visibilities     = default_visibilities.merge( options.extract!(*default_visibilities.keys).compact )
-        @doc              = options.delete(:name){ "#{name} field" }
+        @doc              = options.delete(:name)
         receive!(options)
       end
 
