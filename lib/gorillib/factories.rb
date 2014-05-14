@@ -218,7 +218,10 @@ module Gorillib
     #  Concrete Factories
     # __________________________________________________________________________
 
-    class StringFactory < ConvertingFactory
+    class StringlikeFactory < ConvertingFactory
+    end
+
+    class StringFactory < StringlikeFactory
       self.product = String
       def blankish?(obj)    obj.nil?                 end
       def native?(obj)      obj.respond_to?(:to_str) end
@@ -233,19 +236,19 @@ module Gorillib
       register_factory!(:binary)
     end
 
-    class PathnameFactory  < ConvertingFactory
+    class PathnameFactory  < StringlikeFactory
       self.product = ::Pathname
       def convert(obj)      Pathname.new(obj)         end
       register_factory!
     end
 
-    class SymbolFactory < ConvertingFactory
+    class SymbolFactory < StringlikeFactory
       self.product = Symbol
       def convert(obj)      obj.to_sym                end
       register_factory!
     end
 
-    class RegexpFactory < ConvertingFactory
+    class RegexpFactory < StringlikeFactory
       self.product = Regexp
       def convert(obj)      Regexp.new(obj)           end
       register_factory!
