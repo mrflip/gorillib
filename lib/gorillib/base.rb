@@ -1,7 +1,7 @@
 require 'gorillib/object/blank'
 require 'gorillib/array/extract_options'
 require 'gorillib/array/compact_blank'
-require 'gorillib/array/hashify'
+require 'gorillib/enumerable/hashify'
 require 'gorillib/hash/reverse_merge'
 require 'gorillib/hash/compact'
 require 'gorillib/hash/keys'

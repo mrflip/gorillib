@@ -1,4 +1,4 @@
-class Array
+module Enumerable
   #
   # Gets value of block on each element;
   # constructs a hash of element-value pairs

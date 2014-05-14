@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'gorillib/array/hashify'
+require 'gorillib/enumerable/hashify'
 
 describe Array, :simple_spec, :only do
 
